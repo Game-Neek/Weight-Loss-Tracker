@@ -1,8 +1,11 @@
 let btnClick = document.querySelector("button");
-let enterClick = document.querySelectorAll("");
+let weightadder = document.querySelectorAll("numberInputWeight");
 
-btnClick.addEventListener("click", () =>{
-    window.location.href = "Calendar.html";
+weightadder.addEventListener("keydown", function(event) {
+    if(event.key === 'Enter'){
+     window.location.href = "Landing-Page.html";
+    }
 });
+
 
 
