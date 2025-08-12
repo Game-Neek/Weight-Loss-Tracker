@@ -4,7 +4,7 @@ let weightadder = document.getElementById("numberInputWeight");
 weightadder.addEventListener("keydown", function(event) {
     if(event.key === 'Enter'){
         const num = input.value.trim();
-        if(num == null){
+        if(!num){
             alert("Please input a variable.");
         }
         else{
@@ -13,6 +13,7 @@ weightadder.addEventListener("keydown", function(event) {
     
     }
 });
+
 
 
 
