@@ -37,6 +37,15 @@ body{
   list-style: none;
 }
 
+#sidebar > ul > li:first-child{
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 16px;
+  .logo{
+    font-weight: 600;
+  }
+}
+
 main{
   padding: min(30px, 7%);
 }
@@ -115,6 +124,7 @@ main p{
   margin-top: 20px;
 
 }
+
 
 
 
