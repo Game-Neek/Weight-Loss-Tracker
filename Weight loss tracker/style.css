@@ -24,7 +24,23 @@ body{
   grid-template-columns: auto 1fr;
   /* auto means the first column and 1fr is the second column */
 }
+
+main{
+  padding: min(30px, 7%);
 }
+main p{
+  color: var(--secondary-text-clr);
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+
+/* .container{
+  border: 1px solid var(--line-clr);
+  margin-top: 5px;
+  margin-bottom: 15px;
+}  this is for making the containers on the website*/
+
+
 .card-container{
   display: flex;
   justify-content: center;
@@ -87,6 +103,7 @@ body{
   margin-top: 20px;
 
 }
+
 
 
 
