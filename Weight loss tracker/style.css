@@ -18,7 +18,7 @@ body{
   min-height:100vh;
   min-height: 100dvh;
   background-color:var(--base-clr);
-  color: var(--text-clr);;
+  color: var(--text-clr);
 }
 .card-container{
   display: flex;
@@ -82,4 +82,5 @@ body{
   margin-top: 20px;
 
 }
+
 
