@@ -4,6 +4,16 @@
   box-sizing: border-box;
   font-family: sans-serif;
 }
+
+:root{
+  --base-clr: #11121a;
+  --line-clr: #42434a;
+  --hover-clr: #222533;
+  --text-clr: #e6e6ef;
+  --accent-clr: #5e63ff;
+  --secondary-text-clr: #b0b3c1;
+}
+
 body{
   background-color: #f0f0f0;
 }
@@ -67,4 +77,5 @@ body{
   display:flex;
   justify-content: center;
   margin-top: 20px;
+
 }
