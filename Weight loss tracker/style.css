@@ -46,6 +46,14 @@ body{
   }
 }
 
+#sidebar ul li.active a{
+  color: var(--accent-clr);
+
+  svg{
+    fill: var(--accent-clr);
+  }
+}
+
 main{
   padding: min(30px, 7%);
 }
@@ -124,6 +132,7 @@ main p{
   margin-top: 20px;
 
 }
+
 
 
 
