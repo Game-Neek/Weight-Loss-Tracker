@@ -77,6 +77,16 @@ body{
   cursor: pointer;
 }
 
+#sidebar svg{
+  flex-shrink: 0;
+  fill: var(--text-clr)
+}
+
+#sidebar a span, #sidebar .dropdown-btn span{
+  flex-grow: 1;
+
+}
+
 main{
   padding: min(30px, 7%);
 }
@@ -155,6 +165,7 @@ main p{
   margin-top: 20px;
 
 }
+
 
 
 
