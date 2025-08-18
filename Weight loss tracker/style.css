@@ -91,6 +91,13 @@ body{
   background-color: var(--hover-clr);
 }
 
+#sidebar .sub-menu{
+  display: none;
+}
+#sidebar .sub-menu.show{
+  display: block;
+}
+
 main{
   padding: min(30px, 7%);
 }
@@ -169,6 +176,7 @@ main p{
   margin-top: 20px;
 
 }
+
 
 
 
