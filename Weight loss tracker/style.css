@@ -32,6 +32,10 @@ body{
   padding: 5px 1em;
   background-color: var(--base-clr);
   border-right: 1px solid var(--line-clr);
+
+  position: sticky;
+  top: 0;
+  align-self: start;
 }
 #sidebar ul{
   list-style: none;
@@ -65,7 +69,12 @@ body{
 }
 
 .dropdown-btn{
-  
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  font: inherit;
+  cursor: pointer;
 }
 
 main{
@@ -146,6 +155,7 @@ main p{
   margin-top: 20px;
 
 }
+
 
 
 
