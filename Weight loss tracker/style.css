@@ -92,10 +92,19 @@ body{
 }
 
 #sidebar .sub-menu{
-  display: none;
+  /* display: none; This won't allow a transition so the following lines will allow a transition */
+  /* Grid is what will allow us to have a transition */
+  display: grid; 
+  grid-template-rows: 0fr;
+  transition: 300ms ease-in-out;
+  > div{
+    overflow: hidden;
+  }
 }
+
 #sidebar .sub-menu.show{
-  display: block;
+  grid-template-rows: 1fr;
+
 }
 
 main{
@@ -176,6 +185,7 @@ main p{
   margin-top: 20px;
 
 }
+
 
 
 
