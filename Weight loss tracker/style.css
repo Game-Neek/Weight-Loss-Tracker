@@ -54,6 +54,20 @@ body{
   }
 }
 
+#sidebar a, #sidebar .dropdown-btn, #sidebar .logo{
+  border-radius: .5e;
+  padding: .85em;
+  text-decoration: none;
+  color: var(--text-clr);
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+.dropdown-btn{
+  
+}
+
 main{
   padding: min(30px, 7%);
 }
@@ -132,6 +146,7 @@ main p{
   margin-top: 20px;
 
 }
+
 
 
 
