@@ -112,7 +112,7 @@ body{
 }
 
 .rotate svg:last-child{
-  rotate: 180deg;
+  rotate: -180deg;
 }
 
 main{
@@ -193,6 +193,7 @@ main p{
   margin-top: 20px;
 
 }
+
 
 
 
