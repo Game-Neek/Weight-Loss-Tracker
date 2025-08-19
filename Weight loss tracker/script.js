@@ -1,9 +1,16 @@
 let btnClick = document.querySelector("button");
 let weightadder = document.getElementById("numberInputWeight");
+const toggleButton = document.getElementById('toggle-btn');
+const sidebar = document.getElementById('sidebar');
 
 function toggleSubMenu(button){
-    button.nextElementSibling.classList.toggle('show')
-    button.classList.toggle('rotate')
+    button.nextElementSibling.classList.toggle('show');
+    button.classList.toggle('rotate');
+}
+
+function toggleSidebar(){
+    sidebar.classList.toggle('close');
+    toggleButton.classList.toggle('rotate');
 }
 
 weightadder.addEventListener("keydown", function(event) {
@@ -18,6 +25,7 @@ weightadder.addEventListener("keydown", function(event) {
     
     }
 });
+
 
 
 
