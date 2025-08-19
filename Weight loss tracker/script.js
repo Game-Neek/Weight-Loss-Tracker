@@ -4,6 +4,12 @@ const toggleButton = document.getElementById('toggle-btn');
 const sidebar = document.getElementById('sidebar');
 
 function toggleSubMenu(button){
+    
+    if(!button.nextElementSibling.classList.contains('show')){
+        closeAllSubMenus
+    }
+    // closeAllSubMenus
+
     button.nextElementSibling.classList.toggle('show');
     button.classList.toggle('rotate');
 
@@ -17,10 +23,8 @@ function toggleSidebar(){
     sidebar.classList.toggle('close');
     toggleButton.classList.toggle('rotate');
 
-     Array.from(sidebar.getElementsByClassName('show')).forEach(ul => {
-        ul.classList.remove('show')
-        ul.previousElementSibling.classList.remove('rotate')
-    });
+    closeAllSubMenus()
+
 }
 
 weightadder.addEventListener("keydown", function(event) {
@@ -28,6 +32,7 @@ weightadder.addEventListener("keydown", function(event) {
         const num = weightadder.value.trim();
         if(!num){
             alert("Please input a variable.");
+            return;
         }
         else{
              window.location.href = "Landing-Page.html";
@@ -35,6 +40,14 @@ weightadder.addEventListener("keydown", function(event) {
     
     }
 });
+
+function closeAllSubMenus(){
+    Array.from(sidebar.getElementsByClassName('show')).forEach(ul => {
+        ul.classList.remove('show')
+        ul.previousElementSibling.classList.remove('rotate')
+    });
+}
+
 
 
 
