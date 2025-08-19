@@ -38,6 +38,12 @@ body{
   align-self: start;
   transition: 300ms ease-in-out;
 }
+
+#sidebar.close{
+  padding: 5px;
+  width: 60px;
+}
+
 #sidebar ul{
   list-style: none;
 }
@@ -215,6 +221,7 @@ main p{
   margin-top: 20px;
 
 }
+
 
 
 
