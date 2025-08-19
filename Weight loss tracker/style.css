@@ -107,6 +107,14 @@ body{
 
 }
 
+.dropdown-btn svg{
+  transition: 200ms ease;
+}
+
+.rotate svg:last-child{
+  rotate: 180deg;
+}
+
 main{
   padding: min(30px, 7%);
 }
@@ -185,6 +193,7 @@ main p{
   margin-top: 20px;
 
 }
+
 
 
 
