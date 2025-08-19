@@ -115,6 +115,10 @@ body{
   rotate: -180deg;
 }
 
+#sidebar .sub-menu a{
+  padding-left: 2em;
+}
+
 main{
   padding: min(30px, 7%);
 }
@@ -193,6 +197,7 @@ main p{
   margin-top: 20px;
 
 }
+
 
 
 
