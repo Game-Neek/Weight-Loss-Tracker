@@ -11,6 +11,11 @@ function toggleSubMenu(button){
 function toggleSidebar(){
     sidebar.classList.toggle('close');
     toggleButton.classList.toggle('rotate');
+
+    if(sidebar.classList.contains('close')){
+        sidebar.classList.toggle('close');
+        toggleButton.classList.toggle('rotate');
+    }
 }
 
 weightadder.addEventListener("keydown", function(event) {
@@ -25,6 +30,7 @@ weightadder.addEventListener("keydown", function(event) {
     
     }
 });
+
 
 
 
