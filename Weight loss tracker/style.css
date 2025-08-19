@@ -36,6 +36,7 @@ body{
   position: sticky;
   top: 0;
   align-self: start;
+  transition: 300ms ease-in-out;
 }
 #sidebar ul{
   list-style: none;
@@ -214,6 +215,7 @@ main p{
   margin-top: 20px;
 
 }
+
 
 
 
