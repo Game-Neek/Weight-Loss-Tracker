@@ -132,6 +132,10 @@ body{
   }
 }
 
+#toggle-btn:hover{
+  background-color: var(--hover-clr);
+}
+
 main{
   padding: min(30px, 7%);
 }
@@ -210,6 +214,7 @@ main p{
   margin-top: 20px;
 
 }
+
 
 
 
