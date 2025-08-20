@@ -1,2 +1,9 @@
 const calendar=document.querySelector("calendar");
 const eventModal = document/getElementById("eventModal");
+const closeModal = document.querySelector(".close-btn");
+const saveEventbtn = document.getElementById("saveEventBtn");
+const deleteEventBtn = document.getElementById("deleteEventBtn");
+const eventTitle= document.getElementById("eventTitle");
+const eventDescription = document.getElementById("eventDesc");
+let selectedDate = null;
+let events = JSON.parse(locakStorage.getItem("events")) || {};
