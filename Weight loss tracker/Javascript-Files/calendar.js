@@ -1,13 +1,13 @@
 const calendar=document.querySelector("calendar");
-const eventModal = document/getElementById("eventModal");
+const eventModal = document.getElementById("eventModal");
 const closeModal = document.querySelector(".close-btn");
 const saveEventbtn = document.getElementById("saveEventBtn");
 const deleteEventBtn = document.getElementById("deleteEventBtn");
 const eventTitle= document.getElementById("eventTitle");
-const eventDescs = document.getElementById("eventDesc");
+const eventDesc = document.getElementById("eventDesc");
 
 let selectedDate = null;
-let events = JSON.parse(locakStorage.getItem("events")) || {};
+let events = JSON.parse(localStorage.getItem("events")) || {};
 let yearDetails = [];
 const currentDate = new Date();
 const currentYear = currentDate.getFullYear();
@@ -25,7 +25,7 @@ const getYearlyCalendarDetails = ()=>{
         calendarParams.push({
             year: currentYear,
             month: monthName,
-            days: date.getDate()
+            days: date.getDate(),
         })
     }
     return calendarParams
@@ -54,5 +54,25 @@ function generateCalendar(){
         day.classList.add("day");
         day.textContent = i;
         //mark the day with event 
+        if(events[`${currentMonthIndex}_${i}`]){
+            const marker = document.createElement("div");
+            marker.classList.add("event-marker");
+            day.appendChild(marker);
+
+            //add hover event to show tooltip
+            day.addEventListener("mouseenter", (e) => showtooltip(e,events[`${currentMonthIndex}_${i}`].title)
+        );
+        //hide tooltip
+        day.addEventListener("mouseleave", hideTooltip);
+
+
+        }
+        //modal for input
+        day.addEventListener("click",()=>openModal(currentMonthIndex, i));
+        month.appendChild(day);
+        
     }
+    calendar.appendChild(month);
 }
+
+
