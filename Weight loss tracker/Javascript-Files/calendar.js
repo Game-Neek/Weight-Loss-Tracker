@@ -31,49 +31,69 @@ const getYearlyCalendarDetails = ()=>{
     return calendarParams
 } 
 //generate Calendar for each month
-function generateCalendar(){
-    calendar.innerHTML = "";
-    if(yearDetails.length == 0){
-        yearDetails = getYearlyCalendarDetails();
-    }
-    const monthObj = yearDetails[currentMonthIndex];
-    const daysInMonth = monthObj.days;
-    const month = document.createElement("div");
-    month.classList.add("month")
-    //Head Part
-    const monthHead = document.createElement("div");
-    monthHead.classList.add("month-head");
-    monthHead.innerHTML= `<button id="prevbtn>Previous</button>"
+let calendarEl;               // will hold the DOM node
+
+document.addEventListener('DOMContentLoaded', () => {
+  calendarEl = document.querySelector('.calendar');
+  if (!calendarEl) {
+    console.error('Calendar container ".calendar" not found');
+    return;
+  }
+  generateCalendar();         
+});
+
+
+function generateCalendar() {
+  if (!calendarEl) return;    // defensive guard
+
+  calendarEl.innerHTML = "";
+
+  if (!Array.isArray(yearDetails) || yearDetails.length === 0) {
+    yearDetails = getYearlyCalendarDetails();
+  }
+
+  const monthObj = yearDetails[currentMonthIndex];
+  const daysInMonth = monthObj.days;
+
+  const month = document.createElement('div');
+  month.classList.add('month');
+
+  // Header
+  const monthHead = document.createElement('div');
+  monthHead.classList.add('month-head');
+  monthHead.innerHTML = `
+    <button id="prevBtn" type="button">Previous</button>
     <span>${monthObj.month} ${monthObj.year}</span>
-    <button id="nextBtn">Next</button>`;
-    calendar.appendChild(monthHead);
-    monthHead.querySelector("#prevBtn").addEventListener("click", showPreviousMonth);
-    monthHead.querySelector("#nextBtn").addEventListener("click",showNextMonth);
-    for(let i = 1; i<= daysInMonth; i++){
-        const day = document.createElement("div");
-        day.classList.add("day");
-        day.textContent = i;
-        //mark the day with event 
-        if(events[`${currentMonthIndex}_${i}`]){
-            const marker = document.createElement("div");
-            marker.classList.add("event-marker");
-            day.appendChild(marker);
+    <button id="nextBtn" type="button">Next</button>
+  `;
+  calendarEl.appendChild(monthHead);
 
-            //add hover event to show tooltip
-            day.addEventListener("mouseenter", (e) => showtooltip(e,events[`${currentMonthIndex}_${i}`].title)
-        );
-        //hide tooltip
-        day.addEventListener("mouseleave", hideTooltip);
+  monthHead.querySelector('#prevBtn').addEventListener('click', showPreviousMonth);
+  monthHead.querySelector('#nextBtn').addEventListener('click', showNextMonth);
 
+  // Days
+  for (let i = 1; i <= daysInMonth; i++) {
+    const day = document.createElement('div');
+    day.classList.add('day');
+    day.textContent = i;
 
-        }
-        //modal for input
-        day.addEventListener("click",()=>openModal(currentMonthIndex, i));
-        month.appendChild(day);
-        
+    const key = `${currentMonthIndex}_${i}`;
+    if (events[key]) {
+      const marker = document.createElement('div');
+      marker.classList.add('event-marker');
+      day.appendChild(marker);
+
+      day.addEventListener('mouseenter', (e) => showTooltip(e, events[key].title));
+      day.addEventListener('mouseleave', hideTooltip);
     }
-    calendar.appendChild(month);
+
+    day.addEventListener('click', () => openModal(currentMonthIndex, i));
+    month.appendChild(day);
+  }
+
+  calendarEl.appendChild(month);
 }
+
 
 //Handle month navigation
 function showPreviousMonth(){
@@ -159,7 +179,6 @@ window.addEventListener("click", (e)=> {
 window.onload = () => {
     generateCalendar();
 }
-
 
 
 
