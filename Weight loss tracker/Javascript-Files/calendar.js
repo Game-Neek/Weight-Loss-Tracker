@@ -144,6 +144,21 @@ function deleteEvent(){
 }
 
 //Close modal button
+closeModal.addEventListener("click",closeModalWindow);
+//save button(inside modal)
+saveEventbtn.addEventListener("click",saveEvent);
+//delete event 
+deleteEventBtn.addEventListener("click", deleteEvent);
+
+//if user clicks on anywhere except the input close the modal
+window.addEventListener("click", (e)=> {
+    if(e.target === eventModal) 
+        closeModalWindow();
+});
+
+window.onload = () => {
+    generateCalendar();
+}
 
 
 
