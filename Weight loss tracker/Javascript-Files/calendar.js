@@ -93,6 +93,58 @@ function showNextMonth(){
 }
 
 //tooltip function
+function showTooltip(e,title){
+    tooltip.textContent = title;
+    tooltip.style.left = `${e.pageX + 10}px`;
+    tooltip.style.top = `${e.pageY + 10}px`;
+    tooltip.style.visibility = "visible";
+    tooltip.style.opacity = "1";
+}
+
+function hideTooltip(){
+    tooltip.style.visibility = "hidden";
+    tooltip.style.opacity = "0";   
+}
+
+function openModal(currentMonth,date){
+    selectedDate = `${currentMonth}_${date}`;
+    eventTitle.value = events[`${currentMonth}_${date}`]?.title || "";
+    eventDesc.value=events[`${currentMonth}_${date}`]?.description || "";
+    eventModal.style.display = "block";
+
+}
+
+function closeModalWindow(){
+    eventModal.style.display = "none";
+    selectedDate = null;
+}
+
+function saveEvent(){
+    if(selectedDate && eventTitle.value.trim()){
+        events[selectedDate]={
+            title:eventTitle.value.trim(),
+            description: eventdesc.value.trim(),
+
+        };
+        localStorage.setItem("events", JSON.stringify(events));
+        generateCalendar();
+        closeModalWindow();
+
+    }
+
+}
+
+function deleteEvent(){
+    if(selectedDate){
+        delete events[selectedDate];
+        localStorage.setItem("events", JSON.stringify(events));
+        generateCalendar();
+        closeModalWindow();
+    }
+}
+
+//Close modal button
+
 
 
 
