@@ -75,4 +75,24 @@ function generateCalendar(){
     calendar.appendChild(month);
 }
 
+//Handle month navigation
+function showPreviousMonth(){
+    if(currentMonthIndex>0){
+        currentMonthIndex-=1;
+        generateCalendar();
+
+    }
+}
+
+function showNextMonth(){
+    if(currentMonthIndex < 11){
+        currentMonthIndex+=1;
+        generateCalendar();
+
+    }
+}
+
+//tooltip function
+
+
 
