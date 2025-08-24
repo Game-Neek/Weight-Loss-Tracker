@@ -1,0 +1,24 @@
+/* To incorporate other CSS files, use the @import rule at the top of your CSS file. Example: */
+@import url('style.css');
+
+.calendar{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    width: min(500px, 90vw);
+    margin: 0 auto; 
+    
+}
+
+.month{
+    background-color: #1c1e2c;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+
