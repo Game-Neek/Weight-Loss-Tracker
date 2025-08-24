@@ -24,6 +24,7 @@ body{
   /* the columns are down below and will give the site two. It will make it so the site can have easier time resizing */
   grid-template-columns: auto 1fr;
   /* auto means the first column and 1fr is the second column */
+   text-align: center;
 }
 
 #sidebar{
@@ -298,6 +299,7 @@ main p{
   margin-top: 20px;
 
 }
+
 
 
 
